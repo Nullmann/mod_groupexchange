@@ -22,14 +22,14 @@
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$string['event:answered'] ='Gruppentauschbörse erstellt';
-$string['event:answered_desc'] ='Der Benutzer mit der ID \'{$a->userid}\' hat eine Gruppe im Gruppenaustausch mit der Kursmodul-ID \'{$a->contextinstanceid}\' geändert.';
-$string['event:removed'] ='Gruppentauschbörse entfernt';
-$string['event:removed_desc'] ='Der Benutzer mit der ID \'{$a->userid}\' hat seine Auswahl im Gruppenaustausch mit der Kursmodul-ID \'{$a->contextinstanceid}\' entfernt.';
-$string['event:reportviewed'] ='Bericht angesehen';
-$string['event:reportviewed_desc'] ='Der Benutzer mit der ID \'{$a->userid}\' hat den Bericht für die Gruppentauschbörse mit der Kursmodul-ID \'{$a->contextinstanceid}\'angesehen.';
+$string['event:answered'] = 'Gruppentauschbörse erstellt';
+$string['event:answered_desc'] = 'Der Benutzer mit der ID \'{$a->userid}\' hat eine Gruppe im Gruppenaustausch mit der Kursmodul-ID \'{$a->contextinstanceid}\' geändert.';
+$string['event:removed'] = 'Gruppentauschbörse entfernt';
+$string['event:removed_desc'] = 'Der Benutzer mit der ID \'{$a->userid}\' hat seine Auswahl im Gruppenaustausch mit der Kursmodul-ID \'{$a->contextinstanceid}\' entfernt.';
+$string['event:reportviewed'] = 'Bericht angesehen';
+$string['event:reportviewed_desc'] = 'Der Benutzer mit der ID \'{$a->userid}\' hat den Bericht für die Gruppentauschbörse mit der Kursmodul-ID \'{$a->contextinstanceid}\'angesehen.';
 
-$string['groupexchange:addinstance'] ='Fügt eine neue Instanz der Gruppentauschbörse hinzu';
+$string['groupexchange:addinstance'] = 'Fügt eine neue Instanz der Gruppentauschbörse hinzu';
 
 $string['modulename'] = 'Gruppentauschbörse';
 $string['pluginname'] = 'Gruppentauschbörse';
