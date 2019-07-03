@@ -1,5 +1,4 @@
 <?php
-
 // This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
@@ -22,7 +21,7 @@
  * @copyright 2011 onwards Olexandr Savchuk
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
- 
+
 $string['event:answered'] = 'Group exchange made';
 $string['event:answered_desc'] = 'The user with id \'{$a->userid}\' has changed a group in the group exchange with the course module id \'{$a->contextinstanceid}\'.';
 $string['event:removed'] = 'Group exchange removed';
@@ -38,8 +37,7 @@ $string['pluginadministration'] = 'Group exchange settings';
 
 $string['messageprovider:offer_accepted'] = 'Notification of accepted group exchange offers';
 $string['email_subject'] = '{$a->course}: {$a->exchange}: group exchange offer accepted';
-$string['email_body'] = 
-'Your group exchange offer in \'{$a->exchange}\' (course: \'{$a->course}\') was accepted.
+$string['email_body'] = 'Your group exchange offer in \'{$a->exchange}\' (course: \'{$a->course}\') was accepted.
 
 You were switched from group \'{$a->groupfrom}\' to \'{$a->groupto}\'.';
 

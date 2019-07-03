@@ -20,13 +20,13 @@
  * @package    mod
  * @subpackage groupreg
  * @copyright  2013-2016 TU Darmstadt
- * @author     Olexandr Savchuck, Guido Roessling <roessling@acm.org>
+ * @author     Olexandr Savchuck, Guido Roessling <roessling@acm.org>, Benedikt Schneider (@Nullmann)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 defined('MOODLE_INTERNAL') || die();
 
 $plugin->version  = 2019070301;
-$plugin->requires = 2010112400;  // Requires this Moodle version
+$plugin->requires = 2010112400;  // Requires this Moodle version.
 $plugin->cron     = 0;
 $plugin->maturity  = MATURITY_STABLE;
 $plugin->release = '0.7 for Moodle 2.7-3.0 (Build: 2015121000)';

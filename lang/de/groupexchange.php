@@ -1,5 +1,4 @@
 <?php
-
 // This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
@@ -22,7 +21,7 @@
  * @copyright 2011 onwards Olexandr Savchuk
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
- 
+
 $string['modulename'] = 'Gruppentauschbörse';
 $string['pluginname'] = 'Gruppentauschbörse';
 $string['modulename_help'] = 'Mit der Gruppentauschbörse können Kursverwalter auswählen, welche Gruppen die Kursteilnehmer untereinander tauschen können.';
@@ -31,8 +30,7 @@ $string['pluginadministration'] = 'Einstellungen der Gruppentauschbörse';
 
 $string['messageprovider:offer_accepted'] = 'Benachrichtigung über angenommene Gruppentauschangebote';
 $string['email_subject'] = '{$a->course}: {$a->exchange}: Gruppentauschangebot wurde angenommen';
-$string['email_body'] = 
-'Ihr Gruppentauschangebot in \'{$a->exchange}\' (Kurs: \'{$a->course}\') wurde von einem anderen Teilnehmer angenommen.
+$string['email_body'] = 'Ihr Gruppentauschangebot in \'{$a->exchange}\' (Kurs: \'{$a->course}\') wurde von einem anderen Teilnehmer angenommen.
 
 Sie wurden von der Gruppe \'{$a->groupfrom}\' in die Gruppe \'{$a->groupto}\' verschoben.';
 

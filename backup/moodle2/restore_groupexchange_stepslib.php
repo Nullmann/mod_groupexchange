@@ -1,5 +1,4 @@
 <?php
-
 // This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
@@ -40,7 +39,7 @@ class restore_groupexchange_activity_structure_step extends restore_activity_str
         $paths[] = new restore_path_element('groupexchange_option', '/activity/groupexchange/options/option');
         if ($userinfo) {
             $paths[] = new restore_path_element('groupexchange_answer', '/activity/groupexchange/answers/answer');
-			$paths[] = new restore_path_element('groupexchange_assigned', '/activity/groupexchange/assignments/assigned');
+            $paths[] = new restore_path_element('groupexchange_assigned', '/activity/groupexchange/assignments/assigned');
         }
 
         // Return the paths wrapped into standard activity structure
@@ -67,7 +66,7 @@ class restore_groupexchange_activity_structure_step extends restore_activity_str
     protected function process_groupexchange_option($data) {
         global $DB;
 
-       /* $data = (object)$data;
+        /* $data = (object)$data;
         $oldid = $data->id;
 
         $data->groupexchangeid = $this->get_new_parentid('groupexchange');
@@ -87,28 +86,28 @@ class restore_groupexchange_activity_structure_step extends restore_activity_str
         $data->optionid = $this->get_mappingid('groupexchange_option', $oldid);
         $data->userid = $this->get_mappingid('user', $data->userid);
         $data->timemodified = $this->apply_date_offset($data->timemodified);
-		
+
         $newitemid = $DB->insert_record('groupexchange_answers', $data);*/
         // No need to save this mapping as far as nothing depend on it
         // (child paths, file areas nor links decoder)
     }
-	
-	protected function process_groupexchange_assigned($data) {
-		global $DB;
+
+    protected function process_groupexchange_assigned($data) {
+        global $DB;
 
         /*$data = (object)$data;
         $oldid = $data->id;
-		
-		$data->groupexchangeid = $this->get_new_parentid('groupexchange');
+
+        $data->groupexchangeid = $this->get_new_parentid('groupexchange');
         $data->optionid = $this->get_mappingid('groupexchange_option', $oldid);
         $data->userid = $this->get_mappingid('user', $data->userid);
         $data->timeassigned = $this->apply_date_offset($data->timeassigned);
 
         $newitemid = $DB->insert_record('groupexchange_answers', $data);*/
-	}	
+    }
 
     protected function after_execute() {
         // Add groupexchange related files, no need to match by itemname (just internally handled context)
-        //$this->add_related_files('mod_groupexchange', 'intro', null);
+        // $this->add_related_files('mod_groupexchange', 'intro', null);
     }
 }

@@ -26,8 +26,7 @@
 defined('MOODLE_INTERNAL') || die();
 
 $messageproviders = array (
-    // Notify offer author that his offer was accepted
+    // Notify offer author that his offer was accepted.
     'offer_accepted' => array (
-        
     )
 );
