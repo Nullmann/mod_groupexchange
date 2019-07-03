@@ -63,7 +63,7 @@ class mod_groupexchange_mod_form extends moodleform_mod {
         $mform->disabledIf('timeclose', 'timerestrict');
         
 //-------------------------------------------------------------------------------
-        $features = new object();
+        $features = new stdclass(); //object();
 	  $features->groups           = false;
 	  $features->groupings        = false;
 	  $features->groupmembersonly = true;

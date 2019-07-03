@@ -264,7 +264,7 @@ function groupexchange_is_user_eligible($exchange) {
 	global $USER;
 		
 	// check that the user has student role in the course
-	$context = get_context_instance(CONTEXT_COURSE, $exchange->course);
+	$context = context_course::instance(); //get_context_instance(CONTEXT_COURSE, $exchange->course);
 	$roles = get_user_roles($context, $USER->id, false);
 	foreach ($roles as $role) {
 		if ($role->shortname == 'student') {
@@ -411,7 +411,7 @@ function groupexchange_accept_offer($exchange, $offer, $oldgroupid, $course) {
 	groups_add_member($accepter_newgroup, $accepter);
 	
 	// notify the offerer about the exchange
-	$eventdata = new object();
+	$eventdata = new stdclass(); //object();
 	$eventdata->component         = 'mod_groupexchange';
 	$eventdata->name              = 'offer_accepted';
 	$eventdata->userfrom          = $USER;

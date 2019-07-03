@@ -32,7 +32,7 @@
         print_error('invalidcoursemodule');
     }
     
-    if (!$context = get_context_instance(CONTEXT_MODULE, $cm->id)) {
+    if (!$context = context_module::instance($cm->id)) { //get_context_instance(CONTEXT_MODULE, $cm->id)) {
         print_error('badcontext');
     }
 	
@@ -110,7 +110,8 @@
 				
 			// finally, create new offer
 			$offerid = groupexchange_create_offer($exchange, $offer_group, $request_group);
-			add_to_log($course->id, "groupexchange", "create offer", "view.php?id=$cm->id&offer=$offerid", $exchange->id, $cm->id);
+//GR should be even
+			// add_to_log($course->id, "groupexchange", "create offer", "view.php?id=$cm->id&offer=$offerid", $exchange->id, $cm->id);
 			echo $OUTPUT->notification(get_string('offer_created', 'groupexchange'), 'notifysuccess');
 			// reload the exchange object
 			$exchange = groupexchange_get_instance($cm->instance);
@@ -124,7 +125,8 @@
 		$delete_offer = optional_param('offer', 0, PARAM_INT);
 		
 		if (groupexchange_delete_offer($delete_offer)) {
-			add_to_log($course->id, "groupexchange", "delete offer", "view.php?id=$cm->id&offer=$delete_offer", $exchange->id, $cm->id);
+//GR should be event
+			//add_to_log($course->id, "groupexchange", "delete offer", "view.php?id=$cm->id&offer=$delete_offer", $exchange->id, $cm->id);
 			echo $OUTPUT->notification(get_string('offer_deleted', 'groupexchange'), 'notifysuccess');
 			// reload the exchange object
 			$exchange = groupexchange_get_instance($cm->instance);
@@ -170,7 +172,8 @@
 		else {
 			// accept the exchange offer
 			groupexchange_accept_offer($exchange, $offer, $oldgroupid, $course);
-			add_to_log($course->id, "groupexchange", "accept offer", "view.php?id=$cm->id", $exchange->id, $cm->id);
+//GR should be event
+			//add_to_log($course->id, "groupexchange", "accept offer", "view.php?id=$cm->id", $exchange->id, $cm->id);
 			echo $OUTPUT->notification(get_string('offer_accepted', 'groupexchange'), 'notifysuccess');
 			// reload the exchange object
 			$exchange = groupexchange_get_instance($cm->instance);
@@ -182,7 +185,8 @@
 	// render standing offers
 	if ($action == 'view' 
 			|| ($action == 'offer' && empty($errors))) {
-		add_to_log($course->id, "groupexchange", "view offers", "view.php?id=$cm->id", $exchange->id, $cm->id);
+//GR should be event
+		//add_to_log($course->id, "groupexchange", "view offers", "view.php?id=$cm->id", $exchange->id, $cm->id);
 			echo $renderer->show_offers($cm, $exchange);
 		echo '<br><br>';
 	}

@@ -23,6 +23,13 @@
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
  
+$string['event:answered'] = 'Group exchange made';
+$string['event:answered_desc'] = 'The user with id \'{$a->userid}\' has changed a group in the group exchange with the course module id \'{$a->contextinstanceid}\'.';
+$string['event:removed'] = 'Group exchange removed';
+$string['event:removed_desc'] = 'The user with id \'{$a->userid}\' has removed his choice in the group exchange with the course module id \'{$a->contextinstanceid}\'.';
+$string['event:reportviewed'] = 'Report viewed';
+$string['event:reportviewed_desc'] = 'The user with id \'{$a->userid}\' has viewed the report for the group exchange activity with the course module id \'{$a->contextinstanceid}\'.';
+
 $string['modulename'] = 'Group exchange';
 $string['pluginname'] = 'Group exchange';
 $string['modulename_help'] = 'The group exchange module allows teachers to set up group exchange activities in courses, letting students exchange their group memberships.';
