@@ -120,7 +120,8 @@ if ($action == 'offer') {
     // Check if there's a standing offer by the user already, offering this group.
     if ($DB->record_exists('groupexchange_offers', array (
             'userid' => $USER->id,
-            'group_offered' => $offergroup
+            'group_offered' => $offergroup,
+            'accepted_by' => 0 // Only unaccepted offers need to block this.
     ))) {
         echo $OUTPUT->notification(get_string('error_double_offer', 'groupexchange'), 'notifyproblem');
         $errors ['offer_group'] = get_string('error_double_offer', 'groupexchange');
