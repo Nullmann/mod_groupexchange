@@ -24,9 +24,10 @@ class mod_groupexchange_mod_form extends moodleform_mod {
         }
         $mform->addRule('name', null, 'required', null, 'client');
 
-        $this->add_intro_editor(true, get_string('chatintro', 'chat'));
+        $this->standard_intro_elements();
 
         $mform->addElement('hidden', 'assigned', '', '0');
+        $mform->setType('assigned', PARAM_BOOL);
 
 //-------------------------------------------------------------------------------
         $mform->addElement('header', 'groupshdr', get_string('choose_groups', 'groupexchange'));
@@ -50,6 +51,7 @@ class mod_groupexchange_mod_form extends moodleform_mod {
 		
         $limitoptions = array(0 => get_string('unlimited', 'groupexchange'), 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
         $mform->addElement('hidden', 'limitexchanges', 0);
+        $mform->setType('limitexchanges', PARAM_BOOL);
         //$mform->addHelpButton('limitexchanges', 'setting_limitexchanges', 'groupexchange');
 		
 //-------------------------------------------------------------------------------
@@ -64,10 +66,10 @@ class mod_groupexchange_mod_form extends moodleform_mod {
         
 //-------------------------------------------------------------------------------
         $features = new stdclass(); //object();
-	  $features->groups           = false;
-	  $features->groupings        = false;
-	  $features->groupmembersonly = true;
-	  $this->standard_coursemodule_elements($features);
+        $features->groups           = false;
+        $features->groupings        = false;
+        $features->groupmembersonly = true;
+        $this->standard_coursemodule_elements($features);
 //-------------------------------------------------------------------------------
         $this->add_action_buttons();
     }

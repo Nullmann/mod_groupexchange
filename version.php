@@ -25,17 +25,9 @@
  */
 defined('MOODLE_INTERNAL') || die();
 
-////////////////////////////////////////////////////////////////////////////////
-//  Code fragment to define the module version etc.
-//  This fragment is called by /admin/index.php
-////////////////////////////////////////////////////////////////////////////////
-
-$plugin->version  = 2012120301;
+$plugin->version  = 2019070301;
 $plugin->requires = 2010112400;  // Requires this Moodle version
 $plugin->cron     = 0;
 $plugin->maturity  = MATURITY_STABLE;
 $plugin->release = '0.7 for Moodle 2.7-3.0 (Build: 2015121000)';
-
 $plugin->component = 'mod_groupexchange';
-
-

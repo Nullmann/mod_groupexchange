@@ -74,7 +74,7 @@
     if ($action == 'offer') {
 		// get input
 		$offer_group = optional_param('offer_group', 0, PARAM_INT);
-		$request_group = optional_param('request_group', array(), PARAM_RAW);
+		$request_group = optional_param_array('request_group', array(), PARAM_RAW);
 	
 		// validate input
 		if (!in_array($offer_group, $groupmemberships) || !isset($exchange->groups[$offer_group]))
