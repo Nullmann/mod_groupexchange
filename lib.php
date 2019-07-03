@@ -155,7 +155,7 @@ function groupexchange_delete_instance($id) {
 // Internal functions
 // ------------------------------------------------------------------------------------------
 function groupexchange_get_instance($id) {
-    global $DB, $USER, $_groupexchange_groupmembership_cache;
+    global $DB, $USER, $groupexchangegroupmembershipcache;
 
     $groupexchange = $DB->get_record('groupexchange', array (
             'id' => $id
@@ -204,7 +204,7 @@ function groupexchange_get_instance($id) {
     }
 
     // Sort offers. user's offer first, acceptable offers next, all others afterwards.
-    $_groupexchange_groupmembership_cache = groupexchange_get_user_groups($USER);
+    $groupexchangegroupmembershipcache = groupexchange_get_user_groups($USER);
     usort($groupexchange->offers, "groupexchange_compare_offers");
 
     return $groupexchange;
@@ -214,7 +214,7 @@ function groupexchange_get_instance($id) {
  * Comparator for user-defined sort above
  */
 function groupexchange_compare_offers($a, $b) {
-    global $USER, $_groupexchange_groupmembership_cache;
+    global $USER, $groupexchangegroupmembershipcache;
 
     // User's own offers come first.
     if ($a->userid == $USER->id && $b->userid != $USER->id) {
@@ -224,11 +224,11 @@ function groupexchange_compare_offers($a, $b) {
     }
 
     // Acceptable offers come next.
-    if (groupexchange_offer_acceptable($a, $_groupexchange_groupmembership_cache) &&
-        !groupexchange_offer_acceptable($b, $_groupexchange_groupmembership_cache)) {
+    if (groupexchange_offer_acceptable($a, $groupexchangegroupmembershipcache) &&
+        !groupexchange_offer_acceptable($b, $groupexchangegroupmembershipcache)) {
         return - 1;
-    } else if (! groupexchange_offer_acceptable($a, $_groupexchange_groupmembership_cache) &&
-                 groupexchange_offer_acceptable($b, $_groupexchange_groupmembership_cache)) {
+    } else if (! groupexchange_offer_acceptable($a, $groupexchangegroupmembershipcache) &&
+                 groupexchange_offer_acceptable($b, $groupexchangegroupmembershipcache)) {
         return 1;
     }
 
@@ -282,7 +282,7 @@ function groupexchange_get_user_groups($user) {
     return $groupmembership;
 }
 
-$_groupexchange_user_eligible = - 1;
+$groupexchangeusereligible = - 1;
 
 /**
  * Check if the user is eligible to partake in the group exchange
@@ -292,9 +292,9 @@ function groupexchange_is_user_eligible($exchange) {
         return true;
     }
 
-    global $_groupexchange_user_eligible;
-    if ($_groupexchange_user_eligible !== - 1) {
-        return $_groupexchange_user_eligible;
+    global $groupexchangeusereligible;
+    if ($groupexchangeusereligible !== - 1) {
+        return $groupexchangeusereligible;
     }
 
     global $USER;
@@ -304,12 +304,12 @@ function groupexchange_is_user_eligible($exchange) {
     $roles = get_user_roles($context, $USER->id, false);
     foreach ($roles as $role) {
         if ($role->shortname == 'student') {
-            $_groupexchange_user_eligible = true;
+            $groupexchangeusereligible = true;
             return true;
         }
     }
 
-    $_groupexchange_user_eligible = false;
+    $groupexchangeusereligible = false;
     return false;
 }
 
@@ -443,8 +443,8 @@ function groupexchange_accept_offer($exchange, $offer, $oldgroupid, $course) {
             'userid' => $accepter,
             'groupexchange' => $exchange->id
     ));
-    foreach ($offers as $_offer) {
-        groupexchange_delete_offer($_offer->id, true);
+    foreach ($offers as $singleoffer) {
+        groupexchange_delete_offer($singleoffer->id, true);
     }
 
     // Update standing offer.
@@ -452,7 +452,7 @@ function groupexchange_accept_offer($exchange, $offer, $oldgroupid, $course) {
     $offer->accepted_groupid = $accepteroldgroup;
     $DB->update_record('groupexchange_offers', $offer);
 
-    // remove users from old groups.
+    // Remove users from old groups.
     groups_remove_member($offereroldgroup, $offerer);
     groups_remove_member($accepteroldgroup, $accepter);
 

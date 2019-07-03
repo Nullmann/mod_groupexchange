@@ -29,6 +29,8 @@ $string['event:removed_desc'] = 'The user with id \'{$a->userid}\' has removed h
 $string['event:reportviewed'] = 'Report viewed';
 $string['event:reportviewed_desc'] = 'The user with id \'{$a->userid}\' has viewed the report for the group exchange activity with the course module id \'{$a->contextinstanceid}\'.';
 
+$string['groupexchange:addinstance'] = 'Add a new instance of group exchange.';
+
 $string['modulename'] = 'Group exchange';
 $string['pluginname'] = 'Group exchange';
 $string['modulename_help'] = 'The group exchange module allows teachers to set up group exchange activities in courses, letting students exchange their group memberships.';
