@@ -90,3 +90,7 @@ $string['submit_offer_ignore'] = 'Aktive Angebote ignorieren, meinen Tauschangeb
 $string['setting_students_only'] = 'Nur für Studierende';
 $string['setting_students_only_help'] = 'Nur Studierenden erlauben, an dieser Tauschbörse teilzunehmen.';
 $string['error_students_only'] = 'Nur Studierende können an dieser Tauschbörse teilnehmen.';
+
+// Capabilites (in db/access.php).
+$string['groupexchange:addinstance'] = 'Ermöglicht das Hinzufügen einer Instanz dieses Plugins zum Kurs';
+$string['groupexchange:participate'] = 'Ermöglicht es, einen Gruppentausch anzubieten und/oder zu akzeptieren';

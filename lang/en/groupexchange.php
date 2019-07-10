@@ -90,3 +90,7 @@ $string['submit_offer_ignore'] = 'Ignore the standing offers and post my new off
 $string['setting_students_only'] = 'Students only';
 $string['setting_students_only_help'] = 'Allow only students to participate in this group exchange.';
 $string['error_students_only'] = 'Only students can participate in this group exchange activity.';
+
+// Capabilites (in db/access.php).
+$string['groupexchange:addinstance'] = 'Allows to add an instance of this plugin to the course.';
+$string['groupexchange:participate'] = 'Allows to offer and accep group exchanges.';
